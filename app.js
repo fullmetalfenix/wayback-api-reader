@@ -5,14 +5,18 @@ class Initial extends React.Component{
       super(props);
       this.state = {
           movie: 0,
+          crawl: ""
       };
     };
       
 //  componentDidMount(){
 //}
 getMovie(value){
- console.log(value)
+ fetch("https://swapi.co/api/films/" + value)
+ .then(res => res.json())
+ .then(res => this.setState({crawl: res.opening_crawl}))
 }
+
     render(){
           return(
        <div id="main-container">
@@ -30,7 +34,11 @@ getMovie(value){
                 <option value="7">The Force Awakens</option>
             </select>
             </div>
-
+            <div id="crawl">
+                <p id="crawl-text">
+                    {this.state.crawl}
+                </p>
+            </div>
        </div>
        )
    }
