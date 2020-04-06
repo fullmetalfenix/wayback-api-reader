@@ -10,14 +10,17 @@ class Initial extends React.Component{
       
 //  componentDidMount(){
 //}
-  
+getMovie(value){
+ console.log(value)
+}
     render(){
           return(
        <div id="main-container">
             <h1>Wayback <span style={{color:'#a92e33'}}>Machine</span> API</h1>
             <h2>Star Wars API</h2>
             <div id="make-shift-form">
-            <select id="films" name="films">
+            <select  onChange={() => {this.getMovie(document.getElementById('films').value)}} id="films" name="films">
+                <option value="" disabled selected>Please Select A Film:</option>
                 <option value="1">A New Hope</option>
                 <option value="2">The Empire Strikes Back</option>
                 <option value="3">Return of the Jedi</option>
@@ -26,8 +29,6 @@ class Initial extends React.Component{
                 <option value="6">Revenge of the Sith</option>
                 <option value="7">The Force Awakens</option>
             </select>
-
-                <button id="submit-button">Search</button>
             </div>
 
        </div>
