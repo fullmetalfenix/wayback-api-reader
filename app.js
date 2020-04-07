@@ -15,8 +15,11 @@ getMovie(value){
  fetch("https://swapi.co/api/films/" + value)
  .then(res => res.json())
  .then(res => this.setState({crawl: res.opening_crawl}))
+ document.getElementById("checkbox-toggle").checked = true;
 }
-
+closeModal(){
+    document.getElementById("checkbox-toggle").checked = false;    
+}
     render(){
           return(
        <div id="main-container">
@@ -35,8 +38,8 @@ getMovie(value){
             </select>
             </div>
             <input type="checkbox" name="checkbox" id="checkbox-toggle" />
-            <p>Hi :)!</p>
             <div id="crawl">
+                <div id="close" onClick={this.closeModal}>X</div>
                 <p id="crawl-text">
                     {this.state.crawl}
                 </p>
