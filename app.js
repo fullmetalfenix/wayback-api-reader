@@ -34,6 +34,8 @@ getMovie(value){
                 <option value="7">The Force Awakens</option>
             </select>
             </div>
+            <input type="checkbox" name="checkbox" id="checkbox-toggle" />
+            <p>Hi :)!</p>
             <div id="crawl">
                 <p id="crawl-text">
                     {this.state.crawl}
