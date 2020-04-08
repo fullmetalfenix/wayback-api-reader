@@ -23,7 +23,6 @@ closeModal(){
     render(){
           return(
        <div id="main-container">
-            <h1>Wayback <span style={{color:'#a92e33'}}>Machine</span> API</h1>
             <h2>Star Wars API</h2>
             <div id="make-shift-form">
             <select  onChange={() => {this.getMovie(document.getElementById('films').value)}} id="films" name="films">
