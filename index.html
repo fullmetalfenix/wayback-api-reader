@@ -84,6 +84,8 @@
     #crawl{
       height: 100vh;
       width: 100%;
+      transform-style: preserve-3d;
+      perspective: 1000px;
       position: absolute;
       background: black;
       color: rgba(250,250,250, 78);
@@ -96,6 +98,7 @@
     }
     #crawl-text{
         max-width: 900px;
+        transform: rotateX(50deg);
         font-size:50px;
         position: relative;
         bottom: 105%;

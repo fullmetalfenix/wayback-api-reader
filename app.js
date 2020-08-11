@@ -1,4 +1,4 @@
-//JS Going here
+
 
 class Initial extends React.Component{
     constructor(props) {
@@ -9,12 +9,11 @@ class Initial extends React.Component{
       };
     };
       
-//  componentDidMount(){
-//}
 getMovie(value){
- fetch("https://swapi.co/api/films/" + value)
+ fetch("https://swapi.dev/api/films/" + value)
  .then(res => res.json())
- .then(res => this.setState({crawl: res.opening_crawl}))
+ .then(res => this.setState({crawl: res.opening_crawl}));
+
  document.getElementById("checkbox-toggle").checked = true;
 }
 closeModal(){
