@@ -23,6 +23,7 @@ closeModal(){
           return(
        <div id="main-container">
             <h2>Star Wars API</h2>
+            <div id="form-container">
             <div id="make-shift-form">
             <select  onChange={() => {this.getMovie(document.getElementById('films').value)}} id="films" name="films">
                 <option value="" disabled selected>Please Select A Film:</option>
@@ -38,9 +39,14 @@ closeModal(){
             <input type="checkbox" name="checkbox" id="checkbox-toggle" />
             <div id="crawl">
                 <div id="close" onClick={this.closeModal}>X</div>
+                <div>
                 <p id="crawl-text">
                     {this.state.crawl}
                 </p>
+                </div>
+            </div>
+
+
             </div>
        </div>
        )

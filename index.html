@@ -8,7 +8,7 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
     <script type="text/babel" src="app.js" ></script>
-    <title>Wayback Machine Screenshots</title>
+    <title>React Star Wars Opening Credit Reader</title>
     <style>
      /* CSS Going Here*/
      html{
@@ -22,6 +22,7 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      justify-content: center;
      }
      h1{
       font-family: fantasy;
@@ -42,6 +43,8 @@
       color: rgb(255, 227, 0);
       font-family: fantasy;
       font-size: 42px;
+      position: absolute;
+      top: 20px;
      }
      #make-shift-form{
       background: #a92e33;
@@ -83,9 +86,10 @@
     }
     #crawl{
       height: 100vh;
+      overflow: hidden;
       width: 100%;
       transform-style: preserve-3d;
-      perspective: 1000px;
+      perspective: 500px;
       position: absolute;
       background: black;
       color: rgba(250,250,250, 78);
@@ -98,11 +102,12 @@
     }
     #crawl-text{
         max-width: 900px;
-        transform: rotateX(50deg);
+        transform: rotateX(50deg) scale(1);
         font-size:50px;
         position: relative;
         bottom: 105%;
         animation: crawl-up 60s 1;
+        backface-visibility: hidden;
     }
     #checkbox-toggle{
       position: absolute;
@@ -127,10 +132,20 @@
     #close:hover{
         cursor: pointer;
 }
+#form-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @keyframes crawl-up {
-  from {  bottom: -105%;}
-  to {  bottom: 105%;}
+  from {  bottom: -100%;
+          transform: scale(1) rotateX(50deg);}
+  to {  bottom: 105%;
+        transform: scale(.2) rotateX(50deg);
+      }
 }
     </style>
 </head>
